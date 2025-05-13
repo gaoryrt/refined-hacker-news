@@ -9,11 +9,13 @@ function init() {
 
   for (const comment of comments) {
     const commentSpan = comment.querySelector("div.comment span.commtext");
-    const monospacedHtml = commentSpan.innerHTML.replace(
-      backtickRegex,
-      "<code>$1</code>"
-    );
-    commentSpan.innerHTML = monospacedHtml;
+    if (commentSpan) {
+      const monospacedHtml = commentSpan.innerHTML.replace(
+        backtickRegex,
+        "<code>$1</code>"
+      );
+      commentSpan.innerHTML = monospacedHtml;
+    }
   }
 
   return true;

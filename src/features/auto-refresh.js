@@ -86,7 +86,7 @@ function init(metadata) {
   input.name = "autoRefreshValue";
   input.value = options.autoRefreshValue;
 
-  loader.src = browser.extension.getURL("loader.gif");
+  loader.src = chrome.runtime.getURL("loader.gif");
   loader.classList.add("__rhn__no-display");
 
   const enabledOptions = optionsBarEnabledOptions(metadata);

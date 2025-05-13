@@ -26,7 +26,7 @@ function createTab(request, sender) {
   });
 }
 
-browser.runtime.onMessage.addListener(async (request, sender) => {
+chrome.runtime.onMessage.addListener(async (request, sender) => {
   if (request.url) {
     await createTab(request, sender);
   } else if (request.searchHistory) {

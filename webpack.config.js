@@ -13,7 +13,7 @@ function compileStylusCommand(mode) {
 }
 
 module.exports = (env, argv) => ({
-  devtool: "sourcemap",
+  devtool: "source-map",
   stats: "errors-only",
   entry: {
     "refined-hacker-news": "./src/refined-hacker-news",
@@ -31,7 +31,9 @@ module.exports = (env, argv) => ({
       {
         from: "*",
         context: "src",
-        ignore: ["*.js", "*.styl"],
+        globOptions: {
+          ignore: ["**/*.js", "**/*.styl"],
+        },
       },
       {
         from: "node_modules/webextension-polyfill/dist/browser-polyfill.min.js",
