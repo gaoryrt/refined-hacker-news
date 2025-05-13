@@ -28,7 +28,7 @@ async function init() {
     const instCurrentRootComment = currentRootComment;
     const toggle = document.createElement("a");
 
-    toggle.innerText = "[collapse root]";
+    toggle.innerText = "[--]";
     toggle.href = "javascript:void(0)";
     toggle.classList.add("__rhn__collapse-root-comment");
     toggle.addEventListener("click", () => {

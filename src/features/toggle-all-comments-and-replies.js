@@ -19,9 +19,10 @@ function toggleAllReplies() {
       toggleAllBtn.innerHTML = "toggle all replies";
       toggleAllBtn.href = "javascript:void(0)";
 
-      toggleAllBtn.addEventListener("click", () => {
+      toggleAllBtn.addEventListener("click", async () => {
         const n = comment.querySelector("a.togg").getAttribute("n") - 1;
         for (let i = id + 1; i <= id + n; i++) {
+          await new Promise((resolve) => setTimeout(resolve, 100));
           allComments[i].querySelector("a.togg").click();
         }
       });
