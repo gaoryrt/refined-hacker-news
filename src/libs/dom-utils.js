@@ -58,6 +58,7 @@ export function getTopLevelComments() {
 }
 
 export function getGroupedStories(itemlist) {
+  if (!itemlist) return [];
   const rows = [...itemlist.querySelectorAll(":scope > tbody > tr")];
   while (!rows[0].matches(".athing")) {
     rows.shift();
